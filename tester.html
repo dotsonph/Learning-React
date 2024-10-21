@@ -1,0 +1,49 @@
+<html>
+    <body>
+        <div id = "app"></div>
+
+        <!--This is the imperative method-->
+
+        <!-- <script type="text/javascript">
+            //select div element with "app" id
+            const app = document.getElementById("app");
+                
+            //create a new h1 element
+            const header = document.createElement("h1");
+
+            //create a new text node for the h1 element
+            const text = "Develop. Preview. Ship";
+            const headerContent = document.createTextNode(text);
+
+            //append the text to the h1 element
+            header.appendChild(headerContent);
+
+            //place the h1 element inside the div
+            app.appendChild(header);
+            </scr + ipt> -->
+
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <!--babel script to convert JSX to JS-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type = "text/jsx">
+            const app = document.getElementById("app");
+
+            function Header() {
+                return <h1>Develop. Preview. Ship.</h1>;
+            }
+            
+            /*const root = ReactDOM.createRoot(app);
+            root.render(<h1>Develop. Preview. Ship.</h1>);*/
+
+            const root = ReactDOM.createRoot(app);
+            root.render(<Header />);
+        </script>
+    </body>
+</html>
+
+<!-- This is an example of imperative programming; step-by-step instructions on HOW to build
+
+React is a declarative library; figure out the steps of HOW to update on your behalf
+
+Giving chef steps for building a pizza v.s ordering a pizza w/o the concerning the steps -->
