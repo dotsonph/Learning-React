@@ -1,4 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>This is Dotson Pham's random React practice</title>
+    </head>
+
     <body>
         <div id = "app"></div>
 
@@ -29,15 +35,42 @@
         <script type = "text/jsx">
             const app = document.getElementById("app");
 
-            function Header() {
-                return <h1>Develop. Preview. Ship.</h1>;
+            function Header({title}) {
+                console.log(title);
+                return <h1>{title ? title : 'Default Title'}</h1>;
             }
             
+            function HomePage() {
+                const names = ["Judith", "Menac", "Terka"];
+
+                const [likes, setLikes] = React.useState(0); //sets initial likes state to 0
+
+                function handleClick(){
+                    console.log("increment like count");
+                    setLikes(likes+1);
+                }
+
+                return (
+                <div>
+                    <Header title="Develop. Preview. Ship." />
+                    <ul>
+                        {
+                            names.map(name => <li key={name}>{name}</li>)
+                        }
+                    </ul>
+
+                    <button onClick={handleClick}>
+                        Like ({likes})
+                    </button>
+                </div>
+                );
+            }
+
             /*const root = ReactDOM.createRoot(app);
             root.render(<h1>Develop. Preview. Ship.</h1>);*/
 
             const root = ReactDOM.createRoot(app);
-            root.render(<Header />);
+            root.render(<HomePage />);
         </script>
     </body>
 </html>
